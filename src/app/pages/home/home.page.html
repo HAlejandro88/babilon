@@ -1,0 +1,87 @@
+<ion-header >
+  <ion-toolbar>
+    <img src="../../assets/Captura de Pantalla 2020-04-15 a la(s) 14.09.22.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrincipal()">
+        principal
+      </ion-button>
+      <ion-button (click)="goGuitarras()">
+        Guitarras
+      </ion-button>
+      <ion-button (click)="goBajos()">
+        Bajos
+      </ion-button>
+      <ion-button (click)="goCuerdas()">
+        Cuerdas
+      </ion-button>
+      <ion-button (click)="goUkuleles()">
+        Ukuleles
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section>
+    <img src="../../assets/Captura de Pantalla 2020-04-15 a la(s) 11.51.39.png" alt="img principal" class="principal--img">
+  </section>
+  <ion-grid fixed>
+    <ion-row>
+      <h2><strong>Te Recomendamos</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" *ngFor="let p of ultimos" size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+        <ion-card>
+          <ion-card-header>
+            <img [src]="p.img | productImg" alt="">
+            <ion-card-subtitle>{{p.descripcioonCorta}}</ion-card-subtitle>
+            <ion-card-title>{{p.nombre}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>Lo más Nuevo</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let n of nuevo" size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+        <ion-card>
+          <ion-card-header>
+            <img [src]="n.img | productImg" alt="">
+            <ion-card-subtitle>{{ n.descripcion }}</ion-card-subtitle>
+            <ion-card-title>{{ n.nombre }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <h2><strong>Nosotros</strong></h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-lg="6" size-xs="12">
+        <img [src]="nosotros.img | imagen " alt="jj">
+      </ion-col>
+      <ion-col size="12" size-lg="6" size-xs="12">
+        <div class="nosotros">
+          <h2><strong>{{nosotros.title}}</strong></h2>
+          <p class="texto">{{nosotros.descripcion}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer >
+  <ion-toolbar>
+    <img src="../../assets/Captura de Pantalla 2020-04-16 a la(s) 9.45.29.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" >
+        <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

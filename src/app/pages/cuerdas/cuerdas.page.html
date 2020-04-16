@@ -1,0 +1,48 @@
+<ion-header >
+  <ion-toolbar>
+    <img src="../../assets/Captura de Pantalla 2020-04-15 a la(s) 14.09.22.png" alt="">
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrincipal()">
+        principal
+      </ion-button>
+      <ion-button (click)="goGuitarras()">
+        Guitarras
+      </ion-button>
+      <ion-button (click)="goBajos()">
+        Bajos
+      </ion-button>
+      <ion-button (click)="goCuerdas()">
+        Cuerdas
+      </ion-button>
+      <ion-button (click)="goUkuleles()">
+        Ukuleles
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <h1><strong>Cuerdas</strong></h1>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let c of cuerdas"  size="4">
+        <ion-card>
+          <ion-card-header>
+            <img [src]="c.img | productImg" alt="">
+            <ion-card-subtitle>{{ c.descripcionCorta }}</ion-card-subtitle>
+            <ion-card-title>{{ c.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-button (click)="verMas()" expand="block" fill="clear" shape="round">
+                ver más...
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

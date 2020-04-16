@@ -1,0 +1,39 @@
+$toolbar: #000305;
+$letra: white;
+
+.principal--img {
+  width: 100%;
+}
+
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+ion-content {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+ion-toolbar {
+  --background: #000305;
+  --color: white;
+}
+
+ion-footer img {
+  height: 100px;
+  max-width: 100%;
+
+} 
+
+.texto {
+  text-align: justify;
+}
+
+.nosotros {
+  color: #000305 ;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+
+.nosotros h2 {
+  text-align: center;
+}
