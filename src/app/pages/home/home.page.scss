@@ -1,6 +1,12 @@
 $toolbar: #000305;
 $letra: white;
 
+ion-header img {
+  padding-left: 35px;
+    height: 68px;
+    max-width: 49%
+} 
+
 .principal--img {
   width: 100%;
 }
@@ -18,10 +24,12 @@ ion-toolbar {
   --color: white;
 }
 
+
+
 ion-footer img {
+  padding-left: 19px;
   height: 100px;
   max-width: 100%;
-
 } 
 
 .texto {

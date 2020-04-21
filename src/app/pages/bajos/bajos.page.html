@@ -28,7 +28,7 @@
     </ion-row>
     <ion-row>
       <ion-col *ngFor="let b of bajos"  size="4">
-        <ion-card>
+        <ion-card [ngStyle]="{'display': (b.categoria.nombre === 'bajos' ? 'block': 'none')}">
           <ion-card-header>
             <img [src]="b.img | productImg" alt="">
             <ion-card-subtitle>{{ b.descripcionCorta }}</ion-card-subtitle>

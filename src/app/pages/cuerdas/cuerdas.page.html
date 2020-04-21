@@ -28,7 +28,7 @@
     </ion-row>
     <ion-row>
       <ion-col *ngFor="let c of cuerdas"  size="4">
-        <ion-card>
+        <ion-card [ngStyle]="{'display': (c.categoria.nombre === 'cuerdas' ? 'block': 'none')}">
           <ion-card-header>
             <img [src]="c.img | productImg" alt="">
             <ion-card-subtitle>{{ c.descripcionCorta }}</ion-card-subtitle>

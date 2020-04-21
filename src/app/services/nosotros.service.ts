@@ -12,7 +12,7 @@ export class NosotrosService {
   constructor(public http: HttpClient) { }
 
   getNosotros(id) {//5e973a82ad2da61f31f9e735
-    return this.http.get(`${URL}/nosotros/${id}`);
+    return this.http.get(`${URL}/marcas/${id}`);
   }
 
   traerProductoEspecifico(id) {

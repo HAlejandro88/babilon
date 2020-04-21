@@ -1,3 +1,4 @@
+import { NosotrosService } from './../../services/nosotros.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -8,9 +9,21 @@ import { NavController } from '@ionic/angular';
 })
 export class UkulelesPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  ukuleles: any[] = [];
+
+  constructor(private navCtrl: NavController, private _nosotrosService: NosotrosService) { 
+    this.traerUkuleles();
+  }
 
   ngOnInit() {
+  }
+
+
+  traerUkuleles() {
+    this._nosotrosService.traerProductos().subscribe((data: any) => {
+      this.ukuleles = data.productoG;
+      console.log(this.ukuleles);
+    });
   }
 
 
@@ -33,5 +46,7 @@ export class UkulelesPage implements OnInit {
   goUkuleles() {
     this.navCtrl.navigateForward('/ukuleles');
   }
+
+  verMas() {}
 
 }

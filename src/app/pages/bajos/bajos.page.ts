@@ -11,12 +11,8 @@ export class BajosPage implements OnInit {
 
   bajos: any[] = [];
 
-  bajo1 = '5e989a4bb2edb34108f496f8';
-  bajo2 = '5e989a98b2edb34108f496f9';
-
   constructor(private navCtrl: NavController, private nosotrosService: NosotrosService) { 
-    this.traerBajo1();
-    this.traerBajo2();
+   this.traerBajos();
   }
 
   ngOnInit() {
@@ -42,17 +38,10 @@ export class BajosPage implements OnInit {
     this.navCtrl.navigateForward('/ukuleles');
   }
 
-  traerBajo1() {
-    this.nosotrosService.traerProductoEspecifico(this.bajo1).subscribe((bajo: any) => {
-      this.bajo1 = bajo.productoE;
-      this.bajos.push(this.bajo1);
-    });
-  }
-
-  traerBajo2() {
-    this.nosotrosService.traerProductoEspecifico(this.bajo2).subscribe((bajo: any) => {
-      this.bajo2 = bajo.productoE;
-      this.bajos.push(this.bajo2);
+  traerBajos() {
+    this.nosotrosService.traerProductos().subscribe((data: any) => {
+      this.bajos = data.productoG;
+      console.log(this.bajos);
     });
   }
 
