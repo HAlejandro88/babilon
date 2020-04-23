@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Producto {{ producto.nombre }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <h2>Productos <ion-icon name="play-circle"></ion-icon> {{ producto.nombre }}</h2>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>{{ producto.descripcion }}</ion-label>
+        <p>
+          {{producto.descripcionCorta}}
+        </p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <img [src]="producto.img | productImg" alt="">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

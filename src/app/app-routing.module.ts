@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'bajos',
     loadChildren: () => import('./pages/bajos/bajos.module').then( m => m.BajosPageModule)
   },
+  {
+    path: 'auxiliar',
+    loadChildren: () => import('./pages/auxiliar/auxiliar.module').then( m => m.AuxiliarPageModule)
+  },
 ];
 
 @NgModule({

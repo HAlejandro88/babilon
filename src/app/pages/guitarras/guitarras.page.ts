@@ -1,6 +1,7 @@
 import { NosotrosService } from './../../services/nosotros.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-guitarras',
@@ -11,7 +12,8 @@ export class GuitarrasPage implements OnInit {
 
   guitarras: any[] = [];
 
-  constructor(private nosotrosService: NosotrosService, private navCtrl: NavController) {
+  constructor(private nosotrosService: NosotrosService, private navCtrl: NavController,
+              private router: Router) {
     this.traerGuitarras();
   }
 
@@ -45,6 +47,8 @@ export class GuitarrasPage implements OnInit {
     this.navCtrl.navigateForward('/ukuleles');
   }
 
-  verMas() {}
+  verMas(id) {
+    this.router.navigate(['/auxiliar', {custom_id: id}]);
+  }
 
 }
